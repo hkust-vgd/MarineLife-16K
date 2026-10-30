@@ -1,7 +1,4 @@
-// Project-page demo questions, editorially revised for consistency.
-// Original imported wording is preserved in index-original.html and Git HEAD.
-// These webpage revisions do not replace benchmark ground truth or model scores.
-window.MARINE_DEMO_VIDEOS = [
+const demoVideos = [
   {
     "id": "BigIsland_Jan3_2023__0019",
     "filename": "BigIsland_Jan3_2023_0019.mp4",
@@ -16,7 +13,7 @@ window.MARINE_DEMO_VIDEOS = [
       },
       {
         "label": "Size and shape",
-        "value": "Adult fish with a streamlined, oval body"
+        "value": "Adult size"
       },
       {
         "label": "Secondary objects",
@@ -67,11 +64,11 @@ window.MARINE_DEMO_VIDEOS = [
         "answer": "A — fish"
       },
       {
-        "question": "Which appearance description best matches the fish?",
+        "question": "Which color and size or shape description best matches the fish?",
         "options": [
           {
             "label": "A",
-            "text": "dark green body, yellow tail and black fins; streamlined, oval body"
+            "text": "color: dark green body, yellow tail, black fins; size/shape: adult sizes"
           },
           {
             "label": "B",
@@ -86,7 +83,7 @@ window.MARINE_DEMO_VIDEOS = [
             "text": "color: white scales with thin black on the body; orange-yellow dorsal and anal fins with black edges; white pectoral and pelvic fins; size/shape: large size"
           }
         ],
-        "answer": "A — dark green body, yellow tail and black fins; streamlined, oval body"
+        "answer": "A — color: dark green body, yellow tail, black fins; size/shape: adult sizes"
       },
       {
         "question": "Which option lists only objects present in the video? An option is incorrect if it includes any object not shown.",
@@ -101,7 +98,7 @@ window.MARINE_DEMO_VIDEOS = [
           },
           {
             "label": "C",
-            "text": "sandy seafloor, coral reef and a resting sea lion"
+            "text": "sandy seafloor, spiny coral, different types of coral such as hard coral, soft coral, gorgonian coral, ..."
           },
           {
             "label": "D",
@@ -133,7 +130,7 @@ window.MARINE_DEMO_VIDEOS = [
         "answer": "B — camera position/view: the camera takes a wide shot of Tropical fish and the coral reef; camera angle/movement: static angle on Tropical fish and the coral reef"
       },
       {
-        "question": "Which movement or state of the fish best matches the video?",
+        "question": "Which movement or state of the fish, best matches the video?",
         "options": [
           {
             "label": "A",
@@ -179,12 +176,12 @@ window.MARINE_DEMO_VIDEOS = [
       {
         "question": "How do the camera movement and viewpoint capture the fish and the visible object activity in the video?",
         "options": [],
-        "answer": "A wide, static view keeps the fish and coral reef in the frame while the fish moves slowly; the reference describes no camera pan or tilt."
+        "answer": "The camera takes a wide shot of Tropical fish and the coral reef. The camera angle or movement is described as follows: static angle on Tropical fish and the coral reef. Together, these camera choices record the fish and the visible activity: slow movement."
       },
       {
-        "question": "Write one complete video-captioning sentence of fewer than 80 words describing the main subject, its visible appearance, nearby objects, environment and lighting, video quality, subject activity, camera framing and viewing angle, and camera movement when established; avoid inferring measurements or details that are not visible.",
+        "question": "Write one complete video-captioning sentence that contains fewer than 80 words, describes the central object's identity, texture or pattern, color, size, and shape, includes up to three secondary objects, details the environment and lighting, mentions the video quality, describes the object motion, and defines the camera position and camera angle separately.",
         "options": [],
-        "answer": "An adult reef fish with a smooth-looking, streamlined oval body, dark green coloration, yellow tail and black fins swims slowly above coral and white sand in clear blue water under filtered natural daylight; the footage is clear, with a wide camera position and a static view of the fish and reef."
+        "answer": "The video shows a medium dark blue-black reef fish with a streamlined oval body and bright yellow tail over coral rubble, white sand channels, distant fish, and clear daylight water; the fish moves slowly, with a foreground-to-wide camera position and horizontal camera angle."
       }
     ]
   },
@@ -372,7 +369,7 @@ window.MARINE_DEMO_VIDEOS = [
         "answer": "The camera is stationary, taking a wide shot of the sea turtle from near to far, then from far to near, and moving across the camera. The camera angle or movement is described as follows: horizontal angle that follows the sea turtle. Together, these camera choices record the sea turtle and the visible activity: the sea turtle swims at a slow speed."
       },
       {
-        "question": "Write one complete English video-captioning sentence that contains fewer than 80 words, describes the central object's identity, texture or pattern, color, size, and shape, includes up to three secondary objects, details the environment and lighting, mentions the video quality, describes the object motion, and defines the camera position and camera angle separately.",
+        "question": "Write one complete video-captioning sentence that contains fewer than 80 words, describes the central object's identity, texture or pattern, color, size, and shape, includes up to three secondary objects, details the environment and lighting, mentions the video quality, describes the object motion, and defines the camera position and camera angle separately.",
         "options": [],
         "answer": "The video shows an adult sea turtle with an olive-brown oval scute-patterned shell, speckled pale head, and broad flippers swimming over coral mounds, rocky ledges, distant fish, and clear sunlit blue reef water; the turtle glides slowly, with a following side camera position and horizontal camera angle."
       }
@@ -412,11 +409,11 @@ window.MARINE_DEMO_VIDEOS = [
       },
       {
         "label": "Camera position",
-        "value": "Wide view of the coral reef and two nearby divers"
+        "value": "Camera pans around the coral reef"
       },
       {
         "label": "Camera angle",
-        "value": "Horizontal view with a pan around the coral reef"
+        "value": "Horizontal, wide-angle shot of the coral reef"
       }
     ],
     "qa": [
@@ -443,7 +440,7 @@ window.MARINE_DEMO_VIDEOS = [
         "answer": "C — coral reef"
       },
       {
-        "question": "Which appearance description best matches the coral reef?",
+        "question": "Which color and size or shape description best matches the coral reef?",
         "options": [
           {
             "label": "A",
@@ -491,7 +488,7 @@ window.MARINE_DEMO_VIDEOS = [
         "options": [
           {
             "label": "A",
-            "text": "camera framing: wide view of the coral reef and two divers; viewing angle: horizontal; movement: pan around the reef"
+            "text": "camera position/view: Camera pans around coral reef; camera angle/movement: Horizontal, Wide-angle shot of coral reef"
           },
           {
             "label": "B",
@@ -506,17 +503,17 @@ window.MARINE_DEMO_VIDEOS = [
             "text": "camera position/view: overhead orbiting view; camera angle/movement: vertical circular sweep"
           }
         ],
-        "answer": "A — camera framing: wide view of the coral reef and two divers; viewing angle: horizontal; movement: pan around the reef"
+        "answer": "A — camera position/view: Camera pans around coral reef; camera angle/movement: Horizontal, Wide-angle shot of coral reef"
       },
       {
         "question": "How do the camera movement and viewpoint capture the coral reef and the visible object activity in the video?",
         "options": [],
-        "answer": "The camera pans around the reef in a wide, horizontal view, showing its surroundings and the two divers observing it; the divers' activity is distinct from the camera movement."
+        "answer": "The camera position is Camera pans around coral reef. The camera angle or movement is Horizontal, Wide-angle shot of coral reef. Together, these camera choices capture the coral reef and visible activity: 2 diver observing side on coral reef."
       },
       {
-        "question": "Write one complete video-captioning sentence of fewer than 80 words describing the main subject, its visible appearance, nearby objects, environment and lighting, video quality, subject activity, camera framing and viewing angle, and camera movement when established; avoid inferring measurements or details that are not visible.",
+        "question": "Write one complete video-captioning sentence that contains fewer than 80 words, describes the central object's identity, texture or pattern, color, size, and shape, includes up to three secondary objects, details the environment and lighting, mentions the video quality, describes the object motion, and defines the camera position and camera angle separately.",
         "options": [],
-        "answer": "A large coral reef with varied colors and rough, knobbly, branching surfaces is shown beside two observing divers in clear water under natural daylight, with bright areas and shaded crevices; sharp footage presents the reef from a wide camera position at a horizontal angle as the camera pans around it."
+        "answer": "The video shows a large, varied-color coral reef near two divers in clear water, captured in high-quality sharp footage with a wide horizontal angle as the camera pans around the reef while the divers observe it from the side."
       },
       {
         "question": "How is the environment in the video?",
@@ -527,7 +524,7 @@ window.MARINE_DEMO_VIDEOS = [
           },
           {
             "label": "B",
-            "text": "opaque, sediment-filled water with very low visibility"
+            "text": "a sunlit shallow reef flat"
           },
           {
             "label": "C",
@@ -556,7 +553,7 @@ window.MARINE_DEMO_VIDEOS = [
       },
       {
         "label": "Size and shape",
-        "value": "School of fish; individual body size not specified"
+        "value": "Large"
       },
       {
         "label": "Secondary objects",
@@ -611,11 +608,11 @@ window.MARINE_DEMO_VIDEOS = [
         "answer": "D — school of fish"
       },
       {
-        "question": "Which appearance description best matches the school of fish?",
+        "question": "Which color and size or shape description best matches the school of fish?",
         "options": [
           {
             "label": "A",
-            "text": "silver fish grouped in a school; individual body size not specified"
+            "text": "color: silver; size/shape: large"
           },
           {
             "label": "B",
@@ -630,7 +627,7 @@ window.MARINE_DEMO_VIDEOS = [
             "text": "color: bright scarlet; size/shape: needle-thin and elongated"
           }
         ],
-        "answer": "A — silver fish grouped in a school; individual body size not specified"
+        "answer": "A — color: silver; size/shape: large"
       },
       {
         "question": "Which option lists only objects present in the video? An option is incorrect if it includes any object not shown.",
@@ -671,23 +668,23 @@ window.MARINE_DEMO_VIDEOS = [
           },
           {
             "label": "D",
-            "text": "camera framing: wide view centered on the school of fish; viewing angle: horizontal"
+            "text": "camera position/view: Camera view centered on school of fish; camera angle/movement: Horizontal, Wide-angle shot of school of fish"
           }
         ],
-        "answer": "D — camera framing: wide view centered on the school of fish; viewing angle: horizontal"
+        "answer": "D — camera position/view: Camera view centered on school of fish; camera angle/movement: Horizontal, Wide-angle shot of school of fish"
       },
       {
-        "question": "How does the camera framing and viewing angle show the school of fish and its activity?",
+        "question": "How do the camera movement and viewpoint capture the school of fish and the visible object activity in the video?",
         "options": [],
-        "answer": "A wide, horizontal view keeps the school of fish centered and shows it moving slowly near the coral reef and a filming diver; the reference does not establish whether the camera itself pans or translates."
+        "answer": "The camera position is Camera view centered on school of fish. The camera angle or movement is Horizontal, Wide-angle shot of school of fish. Together, these camera choices capture the school of fish and visible activity: school of fish moves slowly."
       },
       {
-        "question": "Write one complete video-captioning sentence of fewer than 80 words describing the main subject, its visible appearance, nearby objects, environment and lighting, video quality, subject activity, camera framing and viewing angle, and camera movement when established; avoid inferring measurements or details that are not visible.",
+        "question": "Write one complete video-captioning sentence that contains fewer than 80 words, describes the central object's identity, texture or pattern, color, size, and shape, includes up to three secondary objects, details the environment and lighting, mentions the video quality, describes the object motion, and defines the camera position and camera angle separately.",
         "options": [],
-        "answer": "A school of silver fish with smooth-looking, reflective bodies moves slowly near a coral reef and a filming diver in clear water, with daylight filtering through the water; sharp footage shows the school centered in a wide camera view at a horizontal angle."
+        "answer": "The video shows a large silver school of fish moving slowly near a coral reef while a diver films in clear water, with light filtering down through the water and a sharp, wide-angle horizontal camera view centered on the fish."
       },
       {
-        "question": "Which movement or state of the school of fish best matches the video?",
+        "question": "Which movement or state of the school of fish, best matches the video?",
         "options": [
           {
             "label": "A",
@@ -725,7 +722,7 @@ window.MARINE_DEMO_VIDEOS = [
           },
           {
             "label": "D",
-            "text": "opaque water with dense suspended sediment"
+            "text": "a sunlit shallow reef flat"
           }
         ],
         "answer": "A — clear water"
@@ -739,7 +736,7 @@ window.MARINE_DEMO_VIDEOS = [
           },
           {
             "label": "B",
-            "text": "a narrow artificial spotlight illuminating the subjects against otherwise dark water"
+            "text": "Bright natural sunlight"
           },
           {
             "label": "C",
@@ -780,7 +777,7 @@ window.MARINE_DEMO_VIDEOS = [
       },
       {
         "label": "Lighting",
-        "value": "Natural sunlight reaches the scene"
+        "value": "Medium depth; sunlight reaches the area"
       },
       {
         "label": "Video quality",
@@ -792,11 +789,11 @@ window.MARINE_DEMO_VIDEOS = [
       },
       {
         "label": "Camera position",
-        "value": "Wide view of the shark, nearby fish and a diver"
+        "value": "The camera pans around"
       },
       {
         "label": "Camera angle",
-        "value": "Horizontal view with a pan around the scene"
+        "value": "Wide and horizontal shot"
       }
     ],
     "qa": [
@@ -823,7 +820,7 @@ window.MARINE_DEMO_VIDEOS = [
         "answer": "A — shark"
       },
       {
-        "question": "Which appearance description best matches the shark?",
+        "question": "Which color and size or shape description best matches the shark?",
         "options": [
           {
             "label": "A",
@@ -861,7 +858,7 @@ window.MARINE_DEMO_VIDEOS = [
           },
           {
             "label": "D",
-            "text": "shark, small fish, diver and a sea turtle"
+            "text": "shark, school of small fish, diver, uneven rock reef"
           }
         ],
         "answer": "A — diver, shark, fish around"
@@ -875,21 +872,21 @@ window.MARINE_DEMO_VIDEOS = [
           },
           {
             "label": "B",
-            "text": "camera framing: wide view of the shark and nearby subjects; viewing angle: horizontal; movement: pan around the scene"
+            "text": "camera position/view: the camera pans around; camera angle/movement: wide and horizontal shot"
           },
           {
             "label": "C",
-            "text": "camera framing: fixed close-up of the seafloor; viewing angle: vertically downward; movement: none"
+            "text": "camera position/view: the camera pans around; camera angle/movement: wide horizontal shot"
           },
           {
             "label": "D",
             "text": "camera position/view: the camera tilts down toward the seafloor; camera angle/movement: vertical tilt"
           }
         ],
-        "answer": "B — camera framing: wide view of the shark and nearby subjects; viewing angle: horizontal; movement: pan around the scene"
+        "answer": "B — camera position/view: the camera pans around; camera angle/movement: wide and horizontal shot"
       },
       {
-        "question": "Which movement or state of the shark best matches the video?",
+        "question": "Which movement or state of the shark, best matches the video?",
         "options": [
           {
             "label": "A",
@@ -911,19 +908,19 @@ window.MARINE_DEMO_VIDEOS = [
         "answer": "C — the shark swims fairly fast"
       },
       {
-        "question": "Which description best matches the water's visible color?",
+        "question": "How is the environment in the video?",
         "options": [
           {
             "label": "A",
-            "text": "reddish-brown water"
+            "text": "open ocean"
           },
           {
             "label": "B",
-            "text": "green water"
+            "text": "slightly turbid seawater"
           },
           {
             "label": "C",
-            "text": "milky white water"
+            "text": "dark blue seawater"
           },
           {
             "label": "D",
@@ -937,32 +934,32 @@ window.MARINE_DEMO_VIDEOS = [
         "options": [
           {
             "label": "A",
-            "text": "a narrow artificial spotlight against otherwise dark water"
+            "text": "bright shallow sunlight"
           },
           {
             "label": "B",
-            "text": "no visible illumination; the subjects appear only as silhouettes"
+            "text": "dim or low-light conditions"
           },
           {
             "label": "C",
-            "text": "natural sunlight reaches the scene"
+            "text": "medium depth, sunlight reaches the area"
           },
           {
             "label": "D",
-            "text": "a predominantly red artificial light"
+            "text": "sunlight can penetrate through"
           }
         ],
-        "answer": "C — natural sunlight reaches the scene"
+        "answer": "C — medium depth, sunlight reaches the area"
       },
       {
         "question": "How do the camera movement and viewpoint capture the shark and the visible object activity in the video?",
         "options": [],
-        "answer": "The camera pans across the scene in a wide, horizontal view, showing the shark swimming fairly fast together with nearby fish and a swimming diver."
+        "answer": "The camera pans around. The camera angle or movement is described as follows: wide and horizontal shot. Together, these camera choices record the shark and the visible activity: the shark swims fairly fast, and a diver swims nearby."
       },
       {
-        "question": "Write one complete video-captioning sentence of fewer than 80 words describing the main subject, its visible appearance, nearby objects, environment and lighting, video quality, subject activity, camera framing and viewing angle, and camera movement when established; avoid inferring measurements or details that are not visible.",
+        "question": "Write one complete video-captioning sentence that contains fewer than 80 words, describes the central object's identity, texture or pattern, color, size, and shape, includes up to three secondary objects, details the environment and lighting, mentions the video quality, describes the object motion, and defines the camera position and camera angle separately.",
         "options": [],
-        "answer": "A medium-sized grey shark with a smooth-looking, elongated body swims fairly fast near small fish and a diver in blue water reached by natural sunlight; the footage is fairly clear, with a wide camera position and a horizontal viewing angle as the camera pans across the scene."
+        "answer": "The video shows several gray sharks with smooth bodies, pale undersides, pointed snouts, triangular fins, and long tails near scuba divers, bait or camera gear, small fish, particles, and clear blue water; sharks circle and glide, with a mid-water camera position and horizontal camera angle."
       }
     ]
   }

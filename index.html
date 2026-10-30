@@ -1,197 +1,302 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="MarineLife-16K: an attribute-rich video–text dataset for motion-aware marine video understanding. Explore underwater videos, annotations, captions and question–answer pairs.">
-  <meta name="theme-color" content="#174d70">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="MarineLife-16K · WACV 2027">
+  <meta name="theme-color" content="#f8fafc">
+  <meta name="description" content="MarineLife-16K: An Attribute-Rich Video-Text Dataset for Motion-Aware Marine Video Understanding.">
+  <meta property="og:title" content="MarineLife-16K">
   <meta property="og:description" content="An Attribute-Rich Video-Text Dataset for Motion-Aware Marine Video Understanding.">
-  <meta property="og:image" content="./static/figures/teaser.webp">
+  <meta property="og:type" content="website">
   <title>MarineLife-16K | Motion-Aware Marine Video Understanding</title>
-  <link rel="icon" href="./static/images/marine-mark.svg" type="image/svg+xml">
-  <link rel="preload" as="image" href="./static/images/hero/reef-channel.webp" fetchpriority="high">
-  <link rel="stylesheet" href="./static/css/project.css?v=20261024-6">
-  <link rel="stylesheet" href="./static/css/research.css?v=20261024-17">
-  <script defer src="./static/js/demo-data.js?v=20261024-4"></script>
-  <script defer src="./static/js/demo-attributes.js?v=20261024-2"></script>
-  <script defer src="./static/js/project.js?v=20261024-17"></script>
+  <link rel="preload" as="image" href="./static/images/webpage.webp" fetchpriority="high">
+  <link rel="stylesheet" href="./globals.css">
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script defer src="./static/js/header.js"></script>
+  <script defer src="./static/js/figure-viewer.js"></script>
+  <script defer src="./static/js/demo-data.js"></script>
+  <script defer src="./static/js/demo.js"></script>
+  <script defer src="./static/js/results.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
-    <div class="header-inner">
-      <a class="wordmark" href="#top" aria-label="MarineLife-16K home">
-        <img src="./static/images/marine-mark.svg" width="31" height="31" alt="">
-        <span>MarineLife<span class="wordmark-light">-16K</span></span>
-      </a>
-      <nav class="site-nav" aria-label="Main navigation">
-        <a class="nav-overview" href="#overview">Overview</a>
-        <a class="nav-examples" href="#explore">Examples</a>
-        <a class="nav-method" href="#method">Method</a>
-        <a class="nav-results" href="#results">Results</a>
-        <a class="nav-resources" href="#resources">Citation</a>
-      </nav>
-      <a class="header-paper" href="https://quangtrungtruong.github.io/images/MarineLife-16K.pdf" target="_blank" rel="noopener noreferrer">Read the paper <span aria-hidden="true">↗</span></a>
+  <main id="main" tabindex="-1">
+    <section class="hero-section" aria-labelledby="project-title">
+      <div class="container">
+        <h1 class="hero-title" id="project-title">MarineLife-16K: An Attribute-Rich Video-Text Dataset for Motion-Aware Marine Video Understanding</h1>
+
+        <div id="authors" class="research-team" role="group" aria-label="Authors and affiliations">
+          <ul class="hero-authors" aria-label="Authors">
+            <li class="author-item"><a href="https://quangtrungtruong.github.io/" target="_blank" rel="noopener noreferrer">Quang-Trung Truong</a><sup>1,2</sup></li>
+            <li class="author-item">Thanh-Nghia Nguyen<sup>3</sup></li>
+            <li class="author-item">Phu-Phong Vo<sup>3</sup></li>
+            <li class="author-item">Jaeyeon Kim<sup>2</sup></li>
+            <li class="author-item">Cheng Chen<sup>2</sup></li>
+            <li class="author-item">Jie Zhang<sup>2</sup></li>
+            <li class="author-item"><a href="https://sonhua.github.io/" target="_blank" rel="noopener noreferrer">Binh-Son Hua</a><sup>4</sup></li>
+            <li class="author-item">Duc Thanh Nguyen<sup>5</sup></li>
+            <li class="author-item"><a href="https://ivortsang.github.io/" target="_blank" rel="noopener noreferrer">Ivor Tsang</a><sup>2,6</sup></li>
+            <li class="author-item"><a href="https://saikit.org/" target="_blank" rel="noopener noreferrer">Sai-Kit Yeung</a><sup>1</sup></li>
+          </ul>
+          <ol class="hero-affiliations" aria-label="Affiliations">
+            <li class="affil-item"><sup>1</sup>Hong Kong University of Science and Technology</li>
+            <li class="affil-item"><sup>2</sup>Institute of Advanced Intelligence and Computing (IAIC), A*STAR</li>
+            <li class="affil-item"><sup>3</sup>University of Information Technology, VNU-HCM</li>
+            <li class="affil-item"><sup>4</sup>Trinity College Dublin</li>
+            <li class="affil-item"><sup>5</sup>Deakin University</li>
+            <li class="affil-item"><sup>6</sup>Nanyang Technological University</li>
+          </ol>
+        </div>
+
+        <p class="venue-badge reveal"><i class="fas fa-award" aria-hidden="true"></i><span>IEEE/CVF Winter Conference on Applications of Computer Vision 2027 (WACV 2027)</span></p>
+
+        <div class="hero-actions" role="group" aria-label="Research resources">
+          <a class="btn btn-primary" href="https://arxiv.org/pdf/2610.33478" target="_blank" rel="noopener noreferrer"><i class="far fa-file-pdf" aria-hidden="true"></i><span>Paper (PDF)</span></a>
+          <a class="btn btn-secondary" href="https://huggingface.co/datasets/MarineLife-16K/MarineLife-16K" target="_blank" rel="noopener noreferrer"><i class="fas fa-database" aria-hidden="true"></i><span>Hugging Face Dataset</span></a>
+          <a class="btn btn-secondary" href="https://github.com/MarineLife-16K" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i><span>GitHub Code</span></a>
+          <a class="btn btn-secondary" href="#demo"><i class="fas fa-play-circle" aria-hidden="true"></i><span>Demo</span></a>
+          <a class="btn btn-secondary" href="#citation"><i class="fas fa-quote-right" aria-hidden="true"></i><span>BibTeX</span></a>
+        </div>
+
+        <dl class="key-highlights" aria-label="Dataset key highlights">
+          <div class="highlight-card">
+            <dt><span>Video–text pairs</span><i class="fas fa-film" aria-hidden="true"></i></dt>
+            <dd>2,000</dd>
+          </div>
+          <div class="highlight-card">
+            <dt><span>Visual &amp; motion schema</span><i class="fas fa-layer-group" aria-hidden="true"></i></dt>
+            <dd>13 Attributes</dd>
+          </div>
+          <div class="highlight-card">
+            <dt><span>Benchmark VQA questions</span><i class="fas fa-question-circle" aria-hidden="true"></i></dt>
+            <dd>16,080</dd>
+          </div>
+        </dl>
+
+      </div>
+    </section>
+    <div class="teaser-section">
+      <div class="container">
+        <figure id="teaser" class="teaser-figure reveal">
+          <a class="teaser-link figure-zoomable" href="./static/images/figure1_teaser_figure.png" target="_blank" rel="noopener noreferrer" aria-label="Enlarge Figure 1: Annotation highlights figure" aria-haspopup="dialog" data-title="Figure 1. Annotation highlights" data-alt="Figure 1: Annotation highlights: Dataset annotations and evaluation tasks.">
+            <img src="./static/images/figure1_teaser_figure.png" width="2100" height="960" loading="lazy" decoding="async" alt="Figure 1: Annotation highlights: Dataset annotations and evaluation tasks. Four underwater video sequences paired with object motion, camera motion, multiple-object, and scene attributes, connected to video captioning and question-answering evaluation tasks.">
+          </a>
+          <figcaption class="teaser-caption">
+            <strong>Figure 1.</strong> Annotation highlights: Dataset annotations and evaluation tasks.
+          </figcaption>
+        </figure>
+
+      </div>
     </div>
-  </header>
-
-  <main id="main">
-    <section class="project-hero" id="top" aria-labelledby="paper-title">
-      <div class="hero-shade"></div>
-      <div class="hero-content page-width">
-        <h1 id="paper-title"><span class="paper-subtitle">MarineLife-16K: An Attribute-Rich Video-Text Dataset for Motion-Aware Marine Video Understanding</span></h1>
-        <p class="authors">
-          <span>Quang-Trung Truong<sup>1,2</sup></span><span>Thanh-Nghia Nguyen<sup>3</sup></span><span>Phu-Phong Vo<sup>3</sup></span><span>Jaeyeon Kim<sup>2</sup></span><span>Cheng Chen<sup>2</sup></span><span>Jie Zhang<sup>2</sup></span><span>Binh-Son Hua<sup>4</sup></span><span>Duc Thanh Nguyen<sup>5</sup></span><span>Ivor Tsang<sup>2</sup></span><span>Sai-Kit Yeung<sup>1</sup></span>
-        </p>
-        <div class="affiliations">
-          <span><sup>1</sup>Hong Kong University of Science and Technology, Hong Kong SAR</span>
-          <span><sup>2</sup>Institute of Advanced Intelligence and Computing (IAIC), Agency for Science Technology and Research (A*STAR), Singapore, Singapore</span>
-          <span><sup>3</sup>University of Information Technology, Vietnam National University, Ho Chi Minh city, Vietnam</span>
-          <span><sup>4</sup>Trinity College Dublin, Ireland</span>
-          <span><sup>5</sup>Deakin University, Australia</span>
-        </div>
-        <p class="venue-label">IEEE/CVF Winter Conference on Applications of Computer Vision (WACV), 2027</p>
-        <div class="hero-actions">
-          <a class="button button-light" href="https://quangtrungtruong.github.io/images/MarineLife-16K.pdf" target="_blank" rel="noopener noreferrer">Paper <span aria-hidden="true">↗</span></a>
-          <a class="button button-brand button-github" href="https://github.com/quangtrungtruong/MarineLife-16K" target="_blank" rel="noopener noreferrer">
-            <svg class="brand-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 .75a11.25 11.25 0 0 0-3.558 21.923c.563.104.769-.244.769-.542 0-.267-.01-.974-.015-1.912-3.13.68-3.791-1.509-3.791-1.509-.512-1.3-1.25-1.646-1.25-1.646-1.022-.699.077-.685.077-.685 1.13.08 1.725 1.16 1.725 1.16 1.005 1.722 2.637 1.225 3.279.937.102-.728.393-1.225.715-1.507-2.499-.284-5.126-1.25-5.126-5.57 0-1.231.44-2.235 1.16-3.023-.116-.285-.503-1.43.11-2.98 0 0 .945-.303 3.094 1.154A10.79 10.79 0 0 1 12 6.17c.956.005 1.918.13 2.818.38 2.148-1.457 3.092-1.154 3.092-1.154.615 1.55.228 2.695.112 2.98.722.788 1.158 1.792 1.158 3.023 0 4.332-2.63 5.283-5.137 5.562.404.349.764 1.04.764 2.097 0 1.514-.014 2.735-.014 3.107 0 .3.203.651.774.54A11.25 11.25 0 0 0 12 .75Z"/></svg>
-            <span>GitHub</span>
-          </a>
-          <a class="button button-brand button-huggingface" href="https://huggingface.co/datasets/MarineLife-16K/MarineLife-16K" target="_blank" rel="noopener noreferrer">
-            <svg class="brand-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="3" r="1.5" fill="currentColor"/><rect x="4" y="7" width="16" height="14" rx="3" fill="currentColor"/><path d="M2 11v6m20-6v6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="8.5" cy="12" r="1.5" fill="#ffd21e"/><circle cx="15.5" cy="12" r="1.5" fill="#ffd21e"/><path d="M8 17h8" fill="none" stroke="#ffd21e" stroke-width="1.5" stroke-dasharray="1.5 1.5"/></svg>
-            <span>Hugging Face</span>
-          </a>
-        </div>
-      </div>
-      <div class="hero-bottom page-width"><a href="#explore" class="hero-explore">View video examples <span aria-hidden="true">↓</span></a></div>
-    </section>
-
-    <section class="overview-section page-width" id="overview" aria-labelledby="overview-title">
-      <div class="overview-copy">
-        <h2 id="overview-title">Overview</h2>
-        <p>MarineLife-16K is an attribute-rich marine video–text dataset with 2,000 video–text pairs and 16K question–answer pairs. Its annotations cover subjects, appearance, behavior, environmental conditions and camera viewpoint.</p>
-        <p>The benchmark evaluates video question answering and captioning, with a focus on distinguishing camera movement from object motion in underwater scenes.</p>
-      </div>
-      <div class="dataset-facts" aria-label="Dataset at a glance">
-        <div class="fact"><strong>2,000</strong><span>video–text pairs</span></div>
-        <div class="fact"><strong>16K</strong><span>question–answer pairs</span></div>
-        <div class="fact fact-wide"><span class="fact-caption">Benchmark tasks</span><strong class="fact-tasks">Video QA <span aria-hidden="true">/</span> Captioning</strong><span>Object, scene and motion understanding</span></div>
-      </div>
-    </section>
-
-    <section class="research-story page-width" aria-labelledby="dataset-figure-title">
-      <div class="figure-heading"><h2 id="dataset-figure-title">Annotation Highlights</h2></div>
-      <figure class="paper-figure" id="figure-teaser">
-        <div class="paper-image">
-          <img src="./static/figures/teaser.webp" width="1600" height="800" loading="lazy" decoding="async" alt="MarineLife-16K overview: underwater video sequences with object, scene and motion annotations connected to captioning and question-answering tasks.">
-        </div>
-        <figcaption><p>Video, attribute and motion annotations support video QA and captioning.</p></figcaption>
-      </figure>
-      <div class="motion-story">
-        <div class="section-heading"><div><h2>Illustration of Motion Hallucination</h2></div></div>
-        <figure class="paper-figure" id="figure-motion">
-          <div class="paper-image">
-            <img src="./static/figures/motion_halluc_gemini.webp" width="1600" height="512" loading="lazy" decoding="async" alt="Reef video viewpoints and camera trajectory beside Gemini and dataset descriptions, with highlighted differences about camera and object movement.">
+    <section id="abstract" class="overview-section" aria-labelledby="abstract-title">
+      <div class="container">
+        <div class="abstract-content reveal">
+          <h2 id="abstract-title">Abstract</h2>
+          <div class="abstract-text">
+            <p>Marine video understanding is crucial for a wide range of real-world applications. However, existing marine video datasets suffer from limitations, including the limited number of data samples, fine-grained text descriptions, and detailed visual attributes. Visual attributes—capturing appearance (color, texture) and geometry (shape, size)—comprise a significant portion of scene information, yet they are often confounded by camera motion. To address these limitations, we introduce a large-scale, video-text dataset featuring rich, in-the-wild visual attributes tailored for complex marine environments.</p>
+            <p>Our dataset comprises <strong>2,000 video-text pairs</strong> annotated with <strong>13 attributes</strong> covering up to four objects per scene, object visual/geometric properties, behaviors, environmental context, and camera motion, spanning diverse lighting conditions, times of day, and 7 countries. From these annotations, we generate <strong>16,080 video-question pairs</strong> (12,080 multiple-choice, 4,000 open-ended).</p>
+            <p>Furthermore, we benchmark both proprietary and open-source video-LLM models on video question answering and video captioning tasks. We find that: ❶ Proprietary models often achieve superior performance. ❷ VLMs handle object motion well but struggle with complex camera motion. ❸ Closed-source models struggle to perceive camera motion. ❹ VLMs struggle to reason in static cameras.</p>
           </div>
-          <figcaption><p>Gemini description and dataset reference for the same video, with differences in camera and object motion highlighted.</p></figcaption>
+        </div>
+        <figure id="motion-example" class="abstract-figure reveal">
+          <a class="teaser-link figure-zoomable" href="./static/images/motion_halluc_gemini.svg" target="_blank" rel="noopener noreferrer" aria-label="Enlarge Figure 2: Illustration of motion hallucination" aria-haspopup="dialog" data-title="Figure 2. Illustration of motion hallucination.">
+            <img src="./static/images/motion_halluc_gemini.svg" width="1772" height="566" loading="lazy" decoding="async" alt="Underwater video frames and camera path, with Gemini's generated description compared with the dataset annotation, illustrating motion hallucination.">
+          </a>
+          <figcaption class="teaser-caption"><strong>Figure 2.</strong> Illustration of motion hallucination.</figcaption>
         </figure>
       </div>
     </section>
-
-    <section class="explore-section" id="explore" aria-labelledby="explore-title">
-      <div class="page-width">
-        <div class="section-heading">
-          <div><h2 id="explore-title">Data Examples</h2></div>
+    <section id="demo" class="demo-section" aria-labelledby="demo-title">
+      <div class="container">
+        <div class="demo-heading reveal">
+          <h2 id="demo-title">Data Examples</h2>
         </div>
-        <div class="scene-selector" role="tablist" aria-label="Choose a demo video" id="scene-selector"></div>
-        <div class="explorer" id="sample-explorer" role="tabpanel" aria-labelledby="scene-0">
-            <div class="video-column">
-              <div class="video-heading"><span class="live-label"><span aria-hidden="true"></span>Dataset sample</span><span class="sample-number" id="sample-number">01 / 05</span></div>
-              <div class="video-stage">
-                <video id="marine-demo-video" controls playsinline preload="metadata" poster="./static/images/demo/BigIsland_Jan3_2023_0019.webp" aria-label="Reef fish dataset video"></video>
-                <div class="video-error" id="video-error" hidden>We couldn't load this video. <a id="video-download-fallback" href="./Video_demo/BigIsland_Jan3_2023_0019.mp4">Open the video directly ↗</a></div>
+        <div class="demo-showcase reveal">
+          <h3 class="sr-only">Interactive video sample details</h3>
+          <div id="sample-picker" class="sample-picker" role="group" aria-label="Choose a video sample" hidden>
+
+
+          </div>
+          <div class="demo-layout">
+            <div class="demo-media">
+              <div class="demo-video-frame">
+                <video id="demo-video" controls playsinline preload="none" poster="./static/images/samples/GreenIsland_Apr9_2023_0002.webp" src="./Video_demo/GreenIsland_Apr9_2023_0002.mp4" aria-label="Sea turtle video" aria-describedby="sample-caption">
+                  Your browser does not support embedded video. <a href="./Video_demo/GreenIsland_Apr9_2023_0002.mp4">Open the sea turtle video</a>.
+                </video>
+                <button type="button" id="video-start" class="video-start" aria-label="Play sea turtle video" hidden>
+                  <img id="video-cover" src="./static/images/samples/GreenIsland_Apr9_2023_0002.webp" width="1280" height="720" alt="" loading="lazy" decoding="async">
+                  <span class="video-play-label"><span aria-hidden="true">▶</span> Play video</span>
+                </button>
               </div>
-              <div class="video-caption"><div><h3 id="scene-title">Reef fish</h3><p id="scene-location">Big Island · January 2023</p></div><a class="video-download" id="video-download" href="./Video_demo/BigIsland_Jan3_2023_0019.mp4" download aria-label="Download this video">↓ <span>Video</span></a></div>
+              <p id="video-error" class="video-error" role="status" hidden>This video could not be loaded. Try another sample or reload the page.</p>
+              <div class="sample-caption">
+                <h4>CAPTION</h4>
+                <p id="sample-caption">The video shows an adult sea turtle with an olive-brown oval scute-patterned shell, speckled pale head, and broad flippers swimming over coral mounds, rocky ledges, distant fish, and clear sunlit blue reef water; the turtle glides slowly, with a following side camera position and horizontal camera angle.</p>
+              </div>
             </div>
-          <div class="annotation-column">
-            <div class="annotation-tabs" role="tablist" aria-label="Explore annotations">
-              <button type="button" id="tab-attributes" role="tab" aria-selected="true" aria-controls="panel-attributes" tabindex="0" data-panel="attributes">Attributes</button>
-              <button type="button" id="tab-qa" role="tab" aria-selected="false" aria-controls="panel-qa" tabindex="-1" data-panel="qa">Q&amp;A <span id="qa-count"></span></button>
-              <button type="button" id="tab-caption" role="tab" aria-selected="false" aria-controls="panel-caption" tabindex="-1" data-panel="caption">Caption</button>
+            <div class="demo-details">
+              <div class="demo-tabs" role="tablist" aria-label="Sample details" data-active="annotations" hidden>
+                <div class="demo-tab-slider" aria-hidden="true"></div>
+                <button type="button" id="tab-annotations" role="tab" aria-selected="true" aria-controls="panel-annotations" tabindex="0">Annotations</button>
+                <button type="button" id="tab-qa" role="tab" aria-selected="false" aria-controls="panel-qa" tabindex="-1">Q&amp;A</button>
+              </div>
+              <div id="panel-annotations" class="demo-panel">
+                <h4 class="annotation-heading">Sample annotations</h4>
+                <div id="sample-annotations">
+                  <section class="attribute-group" aria-labelledby="attribute-group-0">
+                    <h4 id="attribute-group-0">Subject &amp; appearance</h4>
+                    <dl class="attribute-cards">
+                      <div><dt>Central object</dt><dd>Sea turtle</dd></div>
+                      <div><dt>Texture and pattern</dt><dd>Brownish-black with white spots; white with black dots</dd></div>
+                      <div><dt>Color</dt><dd>Brown</dd></div>
+                      <div><dt>Size and shape</dt><dd>Adult size</dd></div>
+                    </dl>
+                  </section>
+                  <section class="attribute-group" aria-labelledby="attribute-group-1">
+                    <h4 id="attribute-group-1">Scene &amp; visibility</h4>
+                    <dl class="attribute-cards">
+                      <div><dt>Secondary objects</dt><dd>Coral reefs and surrounding rocks; diver</dd></div>
+                      <div><dt>Environment</dt><dd>Clear blue seawater</dd></div>
+                      <div><dt>Video quality</dt><dd>Clear video quality</dd></div>
+                    </dl>
+                  </section>
+                  <section class="attribute-group" aria-labelledby="attribute-group-2">
+                    <h4 id="attribute-group-2">Object activity</h4>
+                    <dl class="attribute-cards attribute-cards-wide"><div><dt>Motion</dt><dd>The sea turtle swims at a slow speed</dd></div></dl>
+                  </section>
+                  <section class="attribute-group" aria-labelledby="attribute-group-3">
+                    <h4 id="attribute-group-3">Camera viewpoint &amp; motion</h4>
+                    <dl class="attribute-cards attribute-cards-wide">
+                      <div><dt>Camera position</dt><dd>Stationary wide shot as the sea turtle moves from near to far and back</dd></div>
+                      <div><dt>Camera angle</dt><dd>Horizontal angle following the sea turtle</dd></div>
+                    </dl>
+                  </section>
+                </div>
+              </div>
+              <div id="panel-qa" class="demo-panel" role="tabpanel" aria-labelledby="tab-qa" tabindex="0" hidden>
+                <div id="question-list" class="question-list"></div>
+              </div>
             </div>
-            <div id="panel-attributes" class="annotation-panel" role="tabpanel" aria-labelledby="tab-attributes" tabindex="0"></div>
-            <div id="panel-qa" class="annotation-panel" role="tabpanel" aria-labelledby="tab-qa" tabindex="0" hidden></div>
-            <div id="panel-caption" class="annotation-panel" role="tabpanel" aria-labelledby="tab-caption" tabindex="0" hidden></div>
           </div>
+          <p id="sample-announcement" class="sr-only" role="status"></p>
+          <noscript><p class="demo-noscript">Enable JavaScript to browse all five samples and their questions.</p></noscript>
         </div>
-        <p class="explorer-note">Five illustrative clips, not the full benchmark.</p>
-        <p class="sr-only" id="explorer-status" aria-live="polite"></p>
-        <noscript><p class="noscript-note">Enable JavaScript to switch samples and explore annotations. You can still watch the videos in the <a href="https://github.com/quangtrungtruong/MarineLife-16K/tree/main/Video_demo">repository</a>.</p></noscript>
       </div>
     </section>
+    <section id="pipeline" class="pipeline-section" aria-labelledby="pipeline-title">
+      <div class="container">
+        <div class="pipeline-heading reveal">
+          <h2 id="pipeline-title">Dataset Pipeline</h2>
+        </div>
 
-    <section class="method-section page-width" id="method" aria-labelledby="method-title">
-      <div class="section-heading"><div><h2 id="method-title">A Three-Stage, Human-in-the-Loop Caption Engine</h2></div></div>
-      <ol class="method-steps">
-        <li><span>01</span><div><h3>Annotate</h3><p>Human annotators record objects, appearance, activity, scene conditions and camera viewpoint.</p></div></li>
-        <li><span>02</span><div><h3>Caption &amp; review</h3><p>A captioner composes descriptions; a reviewer checks them against the annotated attributes.</p></div></li>
-        <li><span>03</span><div><h3>Refine</h3><p>Descriptions that need revision pass through refinement before becoming dataset captions.</p></div></li>
-      </ol>
-      <figure class="paper-figure" id="figure-engine">
-        <div class="paper-image">
-          <img src="./static/figures/data_engine.webp" width="1600" height="548" loading="lazy" decoding="async" alt="Three-stage annotation pipeline: human attribute annotation, caption generation and review, followed by refinement when required.">
-        </div>
-      </figure>
-      <div class="example-heading"><h3>Attribute-to-Caption Example</h3></div>
-      <figure class="paper-figure" id="figure-caption">
-        <div class="paper-image">
-          <img src="./static/figures/captioning_example.webp" width="1600" height="480" loading="lazy" decoding="async" alt="Parrotfish video example showing human-extracted attributes, a color-coded generated caption and the human-refined caption.">
-        </div>
-      </figure>
-      <details class="annotation-statistics">
-        <summary><strong>Annotation Statistics</strong><span class="statistics-toggle" aria-hidden="true">+</span></summary>
-        <figure class="paper-figure" id="figure-statistics">
-          <div class="paper-image">
-            <img src="./static/figures/text_stats1.webp" width="1600" height="1169" loading="lazy" decoding="async" alt="Bar charts of annotated object categories, size and shape, color, texture, lighting, video sharpness, camera position, camera angle and motion.">
-          </div>
+        <figure class="pipeline-figure reveal">
+          <a class="teaser-link figure-zoomable" href="./static/images/figure3_data_engine.png" target="_blank" rel="noopener noreferrer" aria-label="Enlarge Figure 3: A caption engine figure" aria-haspopup="dialog" data-title="Figure 3. A caption engine." data-alt="Figure 3: A caption engine. Three-stage human-in-the-loop caption engine architecture.">
+            <img src="./static/images/figure3_data_engine.png" width="3416" height="1169" loading="lazy" decoding="async" alt="Figure 3: A caption engine. Three-stage human-in-the-loop caption engine utilizing domain-expert attributes, LMM captioner, reviewer alignment scoring, and refiner agent.">
+          </a>
+          <figcaption class="teaser-caption">
+            <strong>Figure 3.</strong> A caption engine.
+          </figcaption>
+          <p class="figure-description">
+            We introduce a three-stage, human-in-the-loop caption engine that utilizes a multi-agent framework to generate high-quality video captions: ❶ Fine-grained attributes are manually annotated by human experts. ❷ An LMM captioner agent inputs video sequences to generate initial synthetic captions, which a reviewer agent subsequently scores against the human-verified attributes (<em>S<sub>c</sub></em> &isin; [0, 5]). ❸ A refiner agent filters the outputs, correcting low-confidence synthetic captions (&tau; = 3.5) to ensure factual alignment.
+          </p>
         </figure>
-      </details>
-    </section>
 
-    <section class="benchmark-section page-width" id="benchmark" aria-labelledby="benchmark-title">
-      <div class="example-heading"><h3>Evaluation Dimensions and Examples</h3></div>
-      <figure class="paper-figure" id="figure-dimensions">
-        <div class="paper-image">
-          <img src="./static/figures/dimension.webp" width="1600" height="994" loading="lazy" decoding="async" alt="Detailed examples of MarineLife-16K evaluation dimensions, including object recognition, morphology, camera viewpoint, behavior, environment, lighting and caption hallucinations.">
-        </div>
-      </figure>
-    </section>
-
-    <section class="results-section page-width" id="results" aria-labelledby="results-title">
-      <div class="section-heading"><div><h2 id="results-title">Benchmark Results</h2></div></div>
-      <p class="results-intro">Open- and closed-source VLMs compared across eight evaluation dimensions under static- and moving-camera settings.</p>
-      <figure class="paper-figure" id="figure-radar">
-        <div class="paper-image">
-          <img src="./static/figures/radar-chart.webp" width="1600" height="781" loading="lazy" decoding="async" alt="Two radar plots comparing open-source VLMs with 7–8B and 30–80B parameters and closed-source VLMs under static-camera and moving-camera conditions across MBC-so, PMT, MBC-mo, PDO, OBK, SM-e, SM-l and OEMU.">
-        </div>
-        <figcaption><p>See the paper for metric definitions, scoring scales and evaluation subsets.</p></figcaption>
-      </figure>
-    </section>
-
-    <section class="resources-section" id="resources" aria-labelledby="resources-title">
-      <!-- <div class="section-heading page-width"><div><h2 id="resources-title">Citation</h2></div></div> -->
-      <div class="page-width">
-        <div class="citation" id="citation"><h3 class="citation-heading">Cite MarineLife-16K</h3><div class="citation-body"><div class="citation-topline"><span>BibTeX · WACV 2027</span><button type="button" id="copy-citation">Copy citation</button></div><pre><code id="bibtex">@inproceedings{truong2027marinelife16k,
-  title={MarineLife-16K: An Attribute-Rich Video-Text Dataset for Motion-Aware Marine Video Understanding},
-  author={Truong, Quang-Trung and Nguyen, Thanh-Nghia andVo, Phu-Phong and Kim, Jaeyeon and Chen, Cheng and Zhang, Jie and 
-    Hua, Binh-Son and Nguyen, Duc Thanh and Tsang, Ivor and Yeung, Sai-Kit},
-  booktitle={IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
-  year={2027}}</code></pre><span id="copy-status" class="sr-only" aria-live="polite"></span></div></div>
+        <figure class="pipeline-figure reveal">
+          <a class="teaser-link figure-zoomable" href="./static/images/figure4_annotated_attributes.png" target="_blank" rel="noopener noreferrer" aria-label="Enlarge Figure 4: An example of annotated attributes figure" aria-haspopup="dialog" data-title="Figure 4. An example of annotated attributes." data-alt="Figure 4: An example of annotated attributes across species.">
+            <img src="./static/images/figure4_annotated_attributes.png" width="4450" height="1335" loading="lazy" decoding="async" alt="Figure 4: An example of annotated attributes across species.">
+          </a>
+          <figcaption class="teaser-caption">
+            <strong>Figure 4.</strong> An example of annotated attributes.
+          </figcaption>
+        </figure>
       </div>
     </section>
+    <section id="statistics" class="stats-section" aria-labelledby="stats-title">
+      <div class="container">
+        <div class="stats-heading reveal">
+          <h2 id="stats-title">Dataset Statistics</h2>
+        </div>
+
+        <figure class="stats-figure reveal">
+          <a class="teaser-link figure-zoomable" href="./static/images/figure5_text_stats.png" target="_blank" rel="noopener noreferrer" aria-label="Enlarge Figure 5: Statistics on the frequency of text-captions figure" aria-haspopup="dialog" data-title="Figure 5. Statistics on the frequency of text-captions." data-alt="Figure 5: Statistics on the frequency of text-captions of MarineLife-16K.">
+            <img src="./static/images/figure5_text_stats.png" width="8972" height="6550" loading="lazy" decoding="async" alt="Figure 5: Statistics on the frequency of text-captions of MarineLife-16K. Frequencies categorized by instance object types (from object 1 to 4) (Top), video quality (Top Right), the size/shape, color, and texture of the central object (Middle Left), camera motion (angle and position) (Bottom Right), and object motion (Bottom Left).">
+          </a>
+          <figcaption class="teaser-caption">
+            <strong>Figure 5.</strong> Statistics on the frequency of text-captions.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+    <section id="dimensions" class="dimensions-section" aria-labelledby="dimensions-title">
+      <div class="container">
+        <div class="dimensions-heading reveal">
+          <h2 id="dimensions-title">Task Dimensions</h2>
+        </div>
+
+
+        <figure class="dimensions-figure reveal">
+          <a class="teaser-link figure-zoomable" href="./static/images/figure7_task_dimensions.png" target="_blank" rel="noopener noreferrer" aria-label="Enlarge Figure 6: Overview of task dimensions of MarineLife-16K figure" aria-haspopup="dialog" data-title="Figure 6. Overview of task dimensions of MarineLife-16K." data-alt="Figure 6: Overview of task dimensions of MarineLife-16K.">
+            <img src="./static/images/figure7_task_dimensions.png" width="6120" height="3800" loading="lazy" decoding="async" alt="Figure 6: Overview of task dimensions of MarineLife-16K. Visual overview of Motion Understanding and Reasoning, Object-centric Understanding, Spatiotemporal Analysis, and Environmental Context Fabrications with corresponding video frames and evaluation questions.">
+          </a>
+          <figcaption class="teaser-caption">
+            <strong>Figure 6.</strong> Overview of task dimensions of MarineLife-16K.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+    <section id="results" class="results-section" aria-labelledby="results-title">
+      <div class="container">
+        <div class="results-heading reveal"><h2 id="results-title">Experimental Results</h2></div>
+        <figure class="paper-result result-table-qa reveal">
+          <a class="teaser-link figure-zoomable" href="./static/images/table3_vlm_benchmark.svg" target="_blank" rel="noopener noreferrer" aria-label="Enlarge Table 1. Model performance on video question answering." aria-haspopup="dialog" data-title="Table 1. Model performance on video question answering.">
+            <img src="./static/images/table3_vlm_benchmark.svg" width="1468" height="788" loading="lazy" decoding="async" alt="Original paper table comparing twelve video-language models on MBC-so, MBC-mo, PMT, PDO, OBK, SM-e, SM-l, and OEMU, with group averages. The PDO column is highlighted in red.">
+          </a>
+          <figcaption class="teaser-caption"><strong>Table 1.</strong> Model performance on video question answering.</figcaption>
+        </figure>
+        <figure class="paper-result result-table-camera reveal">
+          <a class="teaser-link figure-zoomable" href="./static/images/table4_static_vs_moving.svg" target="_blank" rel="noopener noreferrer" aria-label="Enlarge Table 2. Comparison of models across static and moving camera settings." aria-haspopup="dialog" data-title="Table 2. Comparison of models across static and moving camera settings.">
+            <img src="./static/images/table4_static_vs_moving.svg" width="948" height="780" loading="lazy" decoding="async" alt="Original paper table comparing BEH, AH, and ECF scores for twelve models under static and moving camera settings, with group averages and changes. AH columns are highlighted in red.">
+          </a>
+          <figcaption class="teaser-caption"><strong>Table 2.</strong> Comparison of models across static and moving camera settings.</figcaption>
+        </figure>
+        <figure class="paper-result result-radar reveal">
+          <a class="teaser-link figure-zoomable" href="./static/images/radarchart.svg" target="_blank" rel="noopener noreferrer" aria-label="Enlarge Figure 7. Model performance of VLMs on static and moving camera settings." aria-haspopup="dialog" data-title="Figure 7. Model performance of VLMs on static and moving camera settings.">
+            <img src="./static/images/radarchart.svg" width="3897" height="1875" loading="lazy" decoding="async" alt="Two radar charts compare open-source VLMs of 7–8B and 30–80B parameters with closed-source VLMs across eight metrics, under static and moving camera settings.">
+          </a>
+          <figcaption class="teaser-caption"><strong>Figure 7.</strong> Model performance of VLMs on static and moving camera settings.</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section id="citation" class="citation-section" aria-labelledby="citation-title">
+      <div class="container">
+        <div class="citation-heading reveal">
+          <h2 id="citation-title">BibTeX</h2>
+          <button id="copy-bibtex" class="copy-bibtex-button" type="button" aria-label="Copy BibTeX to clipboard" hidden><i class="far fa-copy" aria-hidden="true"></i><span class="copy-label">Copy</span></button>
+        </div>
+        <div class="citation-block">
+          <pre tabindex="0" aria-label="BibTeX citation"><code id="bibtex-code">@inproceedings{truong2027marinelife16k,
+  title     = {MarineLife-16K: An Attribute-Rich Video-Text Dataset for Motion-Aware Marine Video Understanding},
+  author    = {Truong, Quang-Trung and Nguyen, Thanh-Nghia and Vo, Phu-Phong and Kim, Jaeyeon and Chen, Cheng and Zhang, Jie and Hua, Binh-Son and Nguyen, Duc Thanh and Tsang, Ivor and Yeung, Sai-Kit},
+  booktitle = {IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
+  year      = {2027}
+}</code></pre>
+        </div>
+        <p id="copy-status" class="copy-status" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+
   </main>
-  <footer class="site-footer"><div class="page-width footer-inner"><a class="wordmark" href="#top"><img src="./static/images/marine-mark.svg" width="28" height="28" alt=""><span>MarineLife<span class="wordmark-light">-16K</span></span></a><p>WACV 2027</p><a href="#top" class="back-top">Back to top <span aria-hidden="true">↑</span></a></div></footer>
+  <dialog id="figure-viewer" class="figure-viewer" aria-labelledby="figure-viewer-title">
+    <div class="figure-viewer-toolbar">
+      <h2 id="figure-viewer-title">Figure 1. Annotation highlights</h2>
+      <div class="figure-viewer-controls">
+        <button type="button" id="figure-zoom-toggle" aria-label="Zoom in" aria-pressed="false" title="Zoom in"><span aria-hidden="true">+</span></button>
+        <button type="button" id="figure-viewer-close" aria-label="Close enlarged figure" title="Close" autofocus><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+    <div id="figure-viewport" class="figure-viewport" tabindex="0" role="region" aria-label="Enlarged figure; scroll to see details when zoomed">
+      <img id="enlarged-figure" width="2100" height="960" alt="Enlarged MarineLife-16K figure viewer.">
+    </div>
+  </dialog>
 </body>
 </html>
