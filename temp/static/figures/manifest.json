@@ -1,0 +1,58 @@
+[
+  {
+    "name": "teaser",
+    "width": 1600,
+    "height": 800,
+    "full_width": 3200,
+    "full_height": 1599,
+    "source_sha256": "37bc4bd53a0ea7d03171fa179a365e1675edb22bcc53346c325e1abab58534da"
+  },
+  {
+    "name": "motion_halluc_gemini",
+    "width": 1600,
+    "height": 512,
+    "full_width": 3200,
+    "full_height": 1023,
+    "source_sha256": "97d7419380e8922fe034c4a070bdf138328b60689776aeabe40a86b31a0d8b7b"
+  },
+  {
+    "name": "data_engine",
+    "width": 1600,
+    "height": 548,
+    "full_width": 3200,
+    "full_height": 1095,
+    "source_sha256": "007cdc1ac93ba8d298d8506794b770c25e9914f1bb02d444f2ab360702f1f0d7"
+  },
+  {
+    "name": "captioning_example",
+    "width": 1600,
+    "height": 480,
+    "full_width": 3200,
+    "full_height": 960,
+    "source_sha256": "5a5ff969d5ad2cab8bfe5cfebd6bb41266ff003f58fef89c910713d183f65ed2"
+  },
+  {
+    "name": "dimension",
+    "width": 1600,
+    "height": 994,
+    "full_width": 3200,
+    "full_height": 1987,
+    "source_sha256": "3e27e4793ce54d08507b1581bc6ca8dd40e603f57a13c054b51bbdb66abafa7b"
+  },
+  {
+    "name": "text_stats1",
+    "width": 1600,
+    "height": 1169,
+    "full_width": 3200,
+    "full_height": 2337,
+    "source_sha256": "c1cb59729bcb5fdc76e1da504ce8c0b8615a2b76b6fba3d46a3aa8f155b7c078"
+  },
+  {
+    "name": "radar-chart",
+    "width": 1600,
+    "height": 781,
+    "full_width": 3200,
+    "full_height": 1561,
+    "source_sha256": "6b10cab4f41afac752fc041d751c62da477512319778585cec9244bbc101e1ea"
+  }
+]
